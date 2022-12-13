@@ -17,7 +17,7 @@ export default new Command({
     time: 1000,
   },
   run: async ({ client, interaction }) => {
-    const user = interaction.options.getMember("user") || interaction.member;
+    const user = interaction.options.getUser("user") || interaction.user;
 
     client.db.ensure(user.id, {
       wallet: 0,
@@ -28,7 +28,7 @@ export default new Command({
     interaction.reply({
       embeds: [
         new EmbedBuilder()
-          .setTitle(`${user.displayName}'s balance`)
+          .setTitle(`${user.username}'s balance`)
           .setDescription(
             `**Wallet**: ⚡ ${addCommas(data.wallet)}\n**Bank**: ⚡ ${addCommas(
               data.bank

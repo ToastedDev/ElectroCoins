@@ -16,7 +16,7 @@ export default new Command({
     interaction.reply({
       embeds: [
         new EmbedBuilder()
-          .setTitle(`${interaction.member.displayName}'s Daily Coins`)
+          .setTitle(`${interaction.user.username}'s Daily Coins`)
           .setDescription(`⚡ ${addCommas(reward)} was placed in your wallet!`)
           .setColor(client.config.color),
       ],
