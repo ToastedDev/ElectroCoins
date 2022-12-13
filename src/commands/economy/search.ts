@@ -66,10 +66,13 @@ export default new Command({
       if (int.user.id !== interaction.user.id)
         return void int.reply({
           embeds: [
-            new EmbedBuilder().setDescription(
-              `Only **${interaction.user.tag}** can use these buttons.`
-            ),
+            new EmbedBuilder()
+              .setDescription(
+                `Only **${interaction.user.tag}** can use these buttons.`
+              )
+              .setColor("Red"),
           ],
+          ephemeral: true,
         });
 
       const earnings = random(100, 1000);
