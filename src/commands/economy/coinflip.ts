@@ -42,6 +42,14 @@ export default new Command({
             .setColor("Red"),
         ],
       });
+    if (client.db.get(interaction.user.id, "wallet") < amount)
+      return interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setDescription("You don't have enough money to flip a coin.")
+            .setColor("Red"),
+        ],
+      });
 
     const choice = random(1, 2);
     const choices = ["heads", "tails"];
