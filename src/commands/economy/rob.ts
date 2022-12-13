@@ -31,7 +31,7 @@ export default new Command({
       });
 
     const chance = random(1, 2);
-    const earnings = Math.abs(
+    const earnings = Math.trunc(
       random(0.05, 0.1) * client.db.get(user.id, "wallet")
     );
     if (chance !== 2) {
