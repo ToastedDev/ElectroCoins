@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType, EmbedBuilder } from "discord.js";
-import { random, unabbreviate } from "../../functions";
+import { addCommas, random, unabbreviate } from "../../functions";
 import { Command } from "../../structures/Command";
 
 export default new Command({
@@ -60,7 +60,9 @@ export default new Command({
         embeds: [
           new EmbedBuilder()
             .setDescription(
-              `It was **${choices[choice - 1]}**! You won ⚡ ${amount}.`
+              `It was **${choices[choice - 1]}**! You won ⚡ ${addCommas(
+                amount
+              )}.`
             )
             .setColor("Green"),
         ],
@@ -71,7 +73,9 @@ export default new Command({
         embeds: [
           new EmbedBuilder()
             .setDescription(
-              `It was **${choices[choice - 1]}**. You lost ⚡ ${amount}.`
+              `It was **${choices[choice - 1]}**. You lost ⚡ ${addCommas(
+                amount
+              )}.`
             )
             .setColor("Red"),
         ],

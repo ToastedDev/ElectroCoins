@@ -7,7 +7,7 @@ import {
 } from "discord.js";
 import ms from "ms";
 import { Command } from "../../structures/Command";
-import { random } from "../../functions";
+import { addCommas, random } from "../../functions";
 
 const locations = [
   "car",
@@ -82,7 +82,7 @@ export default new Command({
             .setDescription(
               `You searched the **${
                 selectedLocations[parseInt(int.customId)]
-              }** and found ⚡ ${earnings}!`
+              }** and found ⚡ ${addCommas(earnings)}!`
             )
             .setColor("Green"),
         ],
